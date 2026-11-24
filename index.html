@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<!--
+  index.html
+  This is the main page of our website (the homepage).
+  HTML gives the page its STRUCTURE and CONTENT.
+  The CSS file gives it its LOOK, and the JavaScript file adds small INTERACTIONS.
+-->
+<!--
+  Photographs: free stock photos from Unsplash (https://unsplash.com/license),
+  downloaded and saved locally in the images/ folder. No external links needed.
+-->
+<html lang="en">
+<head>
+  <!-- Tells the browser which character set to use. Always include this. -->
+  <meta charset="UTF-8" />
+
+  <!-- Makes the page scale correctly on phones. Needed for responsive design. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- The text shown in the browser tab. -->
+  <title>Salon &amp; Beauty Booking | Look Your Best</title>
+
+  <!-- A short description used by search engines. -->
+  <meta name="description" content="Book salon appointments, explore beauty services, and shop luxurious beauty products." />
+
+  <!-- Link to our stylesheet. All visual styling lives in style.css. -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==========================================================
+       1. HEADER + NAVIGATION
+       The <header> holds our logo and the menu links.
+       ========================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+
+      <!-- Logo: a small flower icon plus the salon name. -->
+      <a href="#home" class="logo">
+        <svg class="logo-flower" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2c1.7 0 3 1.6 3 3.5 0 .8-.3 1.5-.7 2.1 1.7-.7 3.7-.4 4.9.8 1.3 1.3 1.3 3.3 0 4.6-.6.6-1.4 1-2.2 1.1.9.6 1.5 1.6 1.5 2.8 0 2-1.6 3.6-3.6 3.6-1.2 0-2.3-.6-2.9-1.5-.1 1-.5 1.9-1.2 2.6-1.3 1.3-3.3 1.3-4.6 0-.7-.7-1.1-1.6-1.2-2.6-.6.9-1.7 1.5-2.9 1.5-2 0-3.6-1.6-3.6-3.6 0-1.2.6-2.2 1.5-2.8-.8-.1-1.6-.5-2.2-1.1-1.3-1.3-1.3-3.3 0-4.6 1.2-1.2 3.2-1.5 4.9-.8-.4-.6-.7-1.3-.7-2.1C9 3.6 10.3 2 12 2z" />
+          <circle cx="12" cy="12" r="2.6" fill="#fff" />
+        </svg>
+        <span>Bloom <span class="logo-accent">&amp;</span> Glow</span>
+      </a>
+
+      <!-- Hamburger button: only visible on small screens. JavaScript toggles it. -->
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- The menu links. Each link jumps to a section with the matching id. -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <!-- The number in the badge is filled in by JavaScript. -->
+        <a href="#cart" class="nav-cart" aria-label="Shopping bag">
+          🛍️ <span class="cart-count" id="cartCount">0</span>
+        </a>
+        <a href="#booking" class="nav-book">Book Now</a>
+        <a href="#myBookings">My Bookings</a>
+        <a href="#account" class="nav-login">Log In</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- <main> contains the main content of the page. -->
+  <main>
+
+    <!-- ==========================================================
+         2. HERO SECTION
+         The big welcome area at the top of the homepage.
+         ========================================================== -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+
+        <!-- Left side: the text. -->
+        <div class="hero-text">
+          <p class="eyebrow">Welcome to Bloom &amp; Glow</p>
+          <h1>Feel beautiful,<br /><span>inside and out.</span></h1>
+          <p class="hero-description">
+            Relax, refresh, and reveal your best self. Expert stylists,
+            luxurious treatments, and hand-picked beauty products — all in
+            one serene place.
+          </p>
+
+          <!-- Buttons that scroll to other sections of this page. -->
+          <div class="hero-buttons">
+            <a href="#booking" class="btn btn-primary">Book an Appointment</a>
+            <a href="#services" class="btn btn-outline">Explore Services</a>
+          </div>
+
+          <!-- A small trust row with simple stats. -->
+          <div class="hero-stats">
+            <div><strong>15+</strong><span>Years of experience</span></div>
+            <div><strong>4.9</strong><span>Average client rating</span></div>
+            <div><strong>2k+</strong><span>Happy clients</span></div>
+          </div>
+        </div>
+
+        <!-- Right side: a real salon portrait inside an elegant frame.
+             The CSS shapes behind it keep our pink, gold and purple theme. -->
+        <div class="hero-visual">
+          <div class="hero-circle circle-large"></div>
+          <div class="hero-circle circle-small"></div>
+
+          <div class="hero-photo-frame">
+            <img src="images/hero-beauty.jpg"
+                 alt="Smiling woman with radiant skin at a beauty salon" />
+          </div>
+
+          <div class="hero-card">
+            <span class="hero-card-icon">✨</span>
+            <p>Your moment<br />of self-care<br />starts here.</p>
+          </div>
+          <span class="floating-icon icon-1">🌸</span>
+          <span class="floating-icon icon-2">💅</span>
+          <span class="floating-icon icon-3">💎</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         3. SALON SERVICES SECTION
+         ========================================================== -->
+    <section id="services" class="section services">
+      <div class="container">
+
+        <!-- Section heading -->
+        <div class="section-heading">
+          <p class="eyebrow">What we offer</p>
+          <h2>Our Beauty Services</h2>
+          <p>Treat yourself to a service tailored just for you.</p>
+        </div>
+
+        <!-- Cards are arranged in a grid. CSS makes them sit side by side. -->
+        <div class="cards-grid">
+
+          <article class="card service-card">
+            <div class="card-image">
+              <img src="images/service-hair.jpg" alt="Stylist blow-drying a client's hair in a salon" loading="lazy" />
+              <span class="card-icon">💇‍♀️</span>
+            </div>
+            <div class="card-body">
+              <h3>Hair Styling</h3>
+              <p>Cuts, colour, blow-dries and special occasion styles from our expert stylists.</p>
+              <p class="price">From $45</p>
+              <!-- This link jumps to the booking form and selects this service (JavaScript). -->
+              <a href="#booking" class="text-link book-service" data-service="Hair Styling">Book this service →</a>
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-image">
+              <img src="images/service-manicure.jpg" alt="Close-up of glossy painted nails after a manicure" loading="lazy" />
+              <span class="card-icon">💅</span>
+            </div>
+            <div class="card-body">
+              <h3>Manicure &amp; Pedicure</h3>
+              <p>Polished perfection with gel, acrylic, and relaxing spa hand &amp; foot treatments.</p>
+              <p class="price">From $30</p>
+              <a href="#booking" class="text-link book-service" data-service="Manicure & Pedicure">Book this service →</a>
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-image">
+              <img src="images/service-facial.jpg" alt="Woman relaxing during a facial skincare treatment" loading="lazy" />
+              <span class="card-icon">💆‍♀️</span>
+            </div>
+            <div class="card-body">
+              <h3>Facials &amp; Skin</h3>
+              <p>Glowing skin starts here. Deep cleansing, hydrating and anti-aging facials.</p>
+              <p class="price">From $60</p>
+              <a href="#booking" class="text-link book-service" data-service="Facials & Skin">Book this service →</a>
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div class="card-image">
+              <img src="images/service-massage.jpg" alt="Calm spa treatment room with soft towels and candles" loading="lazy" />
+              <span class="card-icon">🌿</span>
+            </div>
+            <div class="card-body">
+              <h3>Massage &amp; Spa</h3>
+              <p>Unwind with a soothing massage and leave feeling calm, light, and renewed.</p>
+              <p class="price">From $70</p>
+              <a href="#booking" class="text-link book-service" data-service="Massage & Spa">Book this service →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         4. BEAUTY PRODUCTS SECTION
+         ========================================================== -->
+    <section id="products" class="section products">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">Shop the collection</p>
+          <h2>Beauty Products</h2>
+          <p>Curated favourites to keep the glow going at home.</p>
+        </div>
+
+        <div class="cards-grid products-grid">
+
+          <article class="card product-card">
+            <!-- The "image" area is styled with CSS, so we don't need image files yet. -->
+            <div class="product-image image-pink">
+              <img src="images/product-serum.jpg" alt="Rose glow facial serum bottle" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3>Rose Glow Serum</h3>
+              <p class="product-type">Skincare</p>
+              <p class="price">$28.00</p>
+              <button class="btn btn-small add-to-bag" type="button">Add to Bag</button>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image image-purple">
+              <img src="images/product-lipstick.jpg" alt="Berry pink lipstick in a gold case" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3>Velvet Lip Colour</h3>
+              <p class="product-type">Makeup</p>
+              <p class="price">$22.00</p>
+              <button class="btn btn-small add-to-bag" type="button">Add to Bag</button>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image image-gold">
+              <img src="images/product-shampoo.jpg" alt="Golden bottle of silk shampoo" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3>Golden Silk Shampoo</h3>
+              <p class="product-type">Hair Care</p>
+              <p class="price">$18.00</p>
+              <button class="btn btn-small add-to-bag" type="button">Add to Bag</button>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-image image-lilac">
+              <img src="images/product-candle.jpg" alt="Lavender scented spa candle surrounded by dried flowers" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3>Lavender Calm Candle</h3>
+              <p class="product-type">Wellness</p>
+              <p class="price">$16.00</p>
+              <button class="btn btn-small add-to-bag" type="button">Add to Bag</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         5. APPOINTMENT BOOKING SECTION
+         The form is checked by JavaScript and saved in localStorage.
+         This is a demonstration: no booking is sent to the salon.
+         ========================================================== -->
+    <section id="booking" class="section booking">
+      <div class="container booking-inner">
+
+        <!-- Left: a short message plus photo "quick picks". -->
+        <div class="booking-intro">
+          <p class="eyebrow">Make time for you</p>
+          <h2>Book Your Appointment</h2>
+          <p>
+            Choose a service, pick a date and time, and add your contact
+            details. It only takes a minute.
+          </p>
+
+          <!-- Tap a photo to choose that service. JavaScript keeps this
+               in sync with the Service dropdown in the form. -->
+          <p class="quick-pick-title">Tap a service to choose it:</p>
+          <div class="service-picker" id="servicePicker">
+            <button type="button" class="service-pick" data-service="Hair Styling">
+              <img src="images/service-hair.jpg" alt="Hair styling" loading="lazy" />
+              <span>Hair Styling</span>
+            </button>
+            <button type="button" class="service-pick" data-service="Manicure & Pedicure">
+              <img src="images/service-manicure.jpg" alt="Manicure" loading="lazy" />
+              <span>Manicure</span>
+            </button>
+            <button type="button" class="service-pick" data-service="Facials & Skin">
+              <img src="images/service-facial.jpg" alt="Facial treatment" loading="lazy" />
+              <span>Facials</span>
+            </button>
+            <button type="button" class="service-pick" data-service="Massage & Spa">
+              <img src="images/service-massage.jpg" alt="Massage and spa" loading="lazy" />
+              <span>Massage</span>
+            </button>
+          </div>
+
+          <ul class="booking-perks">
+            <li>✓ Easy and quick to book</li>
+            <li>✓ Friendly, experienced team</li>
+            <li>✓ Flexible appointment times</li>
+          </ul>
+        </div>
+
+        <!-- Right: the booking form. novalidate lets our own friendly
+             messages appear instead of the browser's default bubbles. -->
+        <form class="booking-form" id="bookingForm" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Jane Smith" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service</label>
+              <select id="service" name="service">
+                <option value="">Choose a service</option>
+                <option>Hair Styling</option>
+                <option>Manicure & Pedicure</option>
+                <option>Facials & Skin</option>
+                <option>Massage & Spa</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Preferred date</label>
+              <input type="date" id="date" name="date" />
+              <!-- JavaScript sets the "min" date to today, so past dates cannot be chosen. -->
+            </div>
+            <div class="form-group">
+              <label for="time">Preferred time</label>
+              <select id="time" name="time">
+                <option value="">Choose a time</option>
+                <option>09:00</option>
+                <option>09:30</option>
+                <option>10:00</option>
+                <option>10:30</option>
+                <option>11:00</option>
+                <option>11:30</option>
+                <option>13:00</option>
+                <option>13:30</option>
+                <option>14:00</option>
+                <option>14:30</option>
+                <option>15:00</option>
+                <option>15:30</option>
+                <option>16:00</option>
+                <option>16:30</option>
+                <option>17:00</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="slot-note">
+            🕒 These are example time slots for this demonstration, not real-time
+            availability. A salon will confirm your visit later.
+          </p>
+
+          <div class="form-group">
+            <label for="notes">Anything we should know? (optional)</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Tell us about your hair, skin, or special request..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Request Appointment</button>
+
+          <!-- Validation messages appear here (not a real confirmation). -->
+          <p class="form-message booking-error" id="formMessage" role="alert"></p>
+        </form>
+
+      </div>
+
+      <!-- Shown only after a valid demonstration booking is saved. -->
+      <div class="container">
+        <div class="booking-confirmation" id="bookingConfirmation" hidden>
+          <span class="confirmation-icon">💐</span>
+          <p class="eyebrow">Demonstration booking saved</p>
+          <h3>Thank you, <span id="bookConfirmName"></span>!</h3>
+          <p>Here are your appointment details.</p>
+          <div class="booking-confirm-grid">
+            <div><span>Service</span><strong id="bookConfirmService"></strong></div>
+            <div><span>Date</span><strong id="bookConfirmDate"></strong></div>
+            <div><span>Time</span><strong id="bookConfirmTime"></strong></div>
+            <div><span>Booking reference</span><strong id="bookConfirmRef"></strong></div>
+          </div>
+          <p class="checkout-disclaimer">
+            This booking is saved only in your browser for demonstration. It has
+            not been sent to the salon and is not a confirmed appointment.
+          </p>
+          <div class="confirmation-actions">
+            <a href="#myBookings" class="btn btn-primary">View My Bookings</a>
+            <button type="button" class="btn btn-outline" id="bookAnotherBtn">Book Another</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         5b. MY BOOKINGS SECTION
+         JavaScript lists the demonstration bookings saved in this
+         browser. Each one can be cancelled here.
+         ========================================================== -->
+    <section id="myBookings" class="section my-bookings-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">Your appointments</p>
+          <h2>My Bookings</h2>
+          <p>View and cancel the demonstration bookings saved in this browser.</p>
+        </div>
+
+        <div class="bookings-panel">
+          <!-- Friendly message shown when there are no saved bookings. -->
+          <div class="bookings-empty" id="bookingsEmpty">
+            <span class="bookings-empty-icon">📅</span>
+            <h3>No bookings yet</h3>
+            <p>When you request an appointment, it will appear here.</p>
+            <a href="#booking" class="btn btn-primary">Book an Appointment</a>
+          </div>
+
+          <!-- JavaScript places one booking card here per saved booking. -->
+          <div class="bookings-list" id="bookingsList" hidden></div>
+        </div>
+
+        <p class="bookings-note">
+          🔒 Bookings are stored only in this browser (localStorage) for
+          demonstration. They are not sent to the salon and will not appear on
+          another device.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         6. SHOPPING BAG SECTION
+         JavaScript fills this area using data saved in localStorage.
+         ========================================================== -->
+    <section id="cart" class="section cart-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">Your picks</p>
+          <h2>Beauty Shopping Bag</h2>
+          <p>Review your products before checkout.</p>
+        </div>
+
+        <div class="cart-panel">
+
+          <!-- This friendly message shows when the bag is empty. -->
+          <div class="cart-empty" id="cartEmpty">
+            <span class="cart-empty-icon">🛍️</span>
+            <h3>Your bag is feeling a little lonely</h3>
+            <p>Browse our beauty products and add something lovely.</p>
+            <a href="#products" class="btn btn-primary">Shop Products</a>
+          </div>
+
+          <!-- JavaScript places one .cart-item row here per product. -->
+          <div class="cart-items" id="cartItems" hidden></div>
+
+          <!-- The total is hidden until something is in the bag. -->
+          <div class="cart-summary" id="cartSummary" hidden>
+            <p class="cart-summary-label">Total</p>
+            <p class="cart-total" id="cartTotal">$0.00</p>
+            <p class="cart-note">Delivery and payment are chosen at checkout.</p>
+            <button type="button" class="btn btn-primary" id="checkoutBtn">
+              Continue to Checkout →
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         7. CHECKOUT SECTION
+         Hidden until the customer clicks "Continue to Checkout".
+         This is a frontend demonstration: no payment is taken.
+         ========================================================== -->
+    <section id="checkout" class="section checkout-section" hidden>
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">Almost there</p>
+          <h2>Checkout</h2>
+          <p>Please review your order and enter your delivery details.</p>
+        </div>
+
+        <!-- The form and the order summary sit side by side on a desktop. -->
+        <div class="checkout-grid" id="checkoutPanel">
+
+          <!-- LEFT: customer details -->
+          <form class="checkout-form" id="checkoutForm" novalidate>
+            <h3>Your Details</h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="checkoutName">Full name</label>
+                <input type="text" id="checkoutName" name="checkoutName" placeholder="Jane Smith" />
+              </div>
+              <div class="form-group">
+                <label for="checkoutEmail">Email address</label>
+                <input type="email" id="checkoutEmail" name="checkoutEmail" placeholder="jane@example.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="checkoutPhone">Phone number</label>
+              <input type="tel" id="checkoutPhone" name="checkoutPhone" placeholder="(555) 123-4567" />
+            </div>
+
+            <div class="form-group">
+              <label for="checkoutAddress">Delivery address</label>
+              <textarea id="checkoutAddress" name="checkoutAddress" rows="3"
+                        placeholder="Street, house number, city and area..."></textarea>
+            </div>
+
+            <!-- Payment choice is selectable only; no payment is processed. -->
+            <fieldset class="payment-options">
+              <legend>Payment method</legend>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="Cash on delivery" />
+                Cash on delivery
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="Mobile money" />
+                Mobile money
+              </label>
+            </fieldset>
+
+            <p class="checkout-disclaimer">
+              🔒 Demonstration only. No payment is taken and no banking or
+              mobile money details are collected.
+            </p>
+
+            <button type="submit" class="btn btn-primary btn-full">Place Order</button>
+
+            <!-- JavaScript shows validation messages here. -->
+            <p class="form-message checkout-error" id="checkoutError" role="alert"></p>
+          </form>
+
+          <!-- RIGHT: the products the customer chose -->
+          <aside class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="checkout-items" id="checkoutItems"></div>
+            <div class="checkout-total-row">
+              <span>Total</span>
+              <strong id="checkoutTotal">$0.00</strong>
+            </div>
+            <a href="#cart" class="text-link">← Back to shopping bag</a>
+          </aside>
+
+        </div>
+
+        <!-- Shown only after a valid order is placed. -->
+        <div class="order-confirmation" id="orderConfirmation" hidden>
+          <span class="confirmation-icon">🎉</span>
+          <h3>Thank you, <span id="confirmName"></span>!</h3>
+          <p>Your order has been placed in this demonstration.</p>
+          <p class="order-reference">
+            Order reference: <strong id="orderReference"></strong>
+          </p>
+          <p class="confirmation-detail" id="confirmationDetail"></p>
+          <p class="checkout-disclaimer">
+            No payment was processed and no real order has been sent to the salon yet.
+          </p>
+          <div class="confirmation-actions">
+            <a href="#products" class="btn btn-primary">Continue Shopping</a>
+            <a href="#home" class="btn btn-outline">Back to Home</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- A placeholder section for future login/register pages. -->
+    <section id="account" class="account-strip">
+      <div class="container account-inner">
+        <div>
+          <h2>Join the Bloom &amp; Glow family</h2>
+          <p>Create an account to track your bookings and orders in one place.</p>
+        </div>
+        <div class="account-buttons">
+          <button class="btn btn-outline" type="button" id="loginBtn">Log In</button>
+          <button class="btn btn-primary" type="button" id="registerBtn">Create Account</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================
+       6. FOOTER
+       ========================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-about">
+        <h3>Bloom <span class="logo-accent">&amp;</span> Glow</h3>
+        <p>A little place to feel a lot more like yourself.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Pinterest">📌</a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#cart">Shopping Bag</a>
+        <a href="#booking">Book Now</a>
+        <a href="#myBookings">My Bookings</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Visit Us</h4>
+        <p>123 Beauty Lane<br />Bloomfield, BL 12345</p>
+        <p>📞 (555) 123-4567<br />✉️ hello@bloomandglow.com</p>
+      </div>
+
+      <div class="footer-hours">
+        <h4>Opening Hours</h4>
+        <p>Mon – Fri: 9am – 7pm<br />Saturday: 9am – 5pm<br />Sunday: Closed</p>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> Bloom &amp; Glow. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- A small message that appears when a product is added to the bag. -->
+  <div class="cart-toast" id="cartToast" role="status" aria-live="polite"></div>
+
+  <!-- Load JavaScript last, so all HTML elements exist before the script runs. -->
+  <script src="script.js"></script>
+</body>
+</html>
